@@ -1,0 +1,36 @@
+{
+    "COMMON(Stress,Sleep)": {
+      "1": "Respiratory",
+      "2": "Stress",
+      "3": "Sleeping problems"
+    },
+    "HAIR": {
+      "1": "Dandruff",
+      "2": "Hair Loss",
+      "3": "Dry Hair",
+      "4": "Spit Ends",
+      "5": "Oily Hair",
+      "6": "Dull Hair",
+      "7": "Heat Damaged Hair"
+    },
+    "BONE": {
+      "1": "Thinning of Bones",
+      "2": "softening of the bones",
+      "3": "Joints pain (Knee,Back)",
+      "4": "Cervical Spondylosis"
+    },
+    "SKIN": {
+      "1": "Cold sore",
+      "2": "Eczema",
+      "3": "Ringworm(Daad)",
+      "4": "Heat rash(Ghamori)",
+      "5": "Pimple",
+      "6": "White spot"
+    },
+    "CHRONIC_DISEASES": {
+      "1": "Sugar",
+      "2": "Diabetes",
+      "3": "Sciatica",
+      "4": "Alzheimers"
+    }
+  }
