@@ -117,6 +117,22 @@ const headerLinksStyle = theme => ({
       padding: "10px 20px"
     }
   },
+
+  dropdownLink2: {
+    backgroundColor:"transparent",
+   border:"none",
+   "&":{
+    textDecoration: "none",
+    display: "block",
+    padding: "10px 20px"
+   },
+    "&:hover": {
+      color: "white",
+      textDecoration: "none",
+      display: "block",
+      padding: "10px 20px"
+    }
+  },
   ...tooltip,
   marginRight5: {
     marginRight: "5px"

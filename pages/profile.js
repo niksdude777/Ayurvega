@@ -47,7 +47,7 @@ export default function ProfilePage(props) {
     <div>
       <Header
         color="transparent"
-        brand="NextJS Material Kit"
+        brand="Ayurvega"
         rightLinks={<HeaderLinks />}
         fixed
         changeColorOnScroll={{

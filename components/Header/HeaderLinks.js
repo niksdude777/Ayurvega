@@ -10,7 +10,9 @@ import Tooltip from "@material-ui/core/Tooltip";
 import Icon from "@material-ui/core/Icon";
 
 // @material-ui/icons
-import { Apps, CloudDownload, ContactsOutlined } from "@material-ui/icons";
+import AccountBoxIcon from '@material-ui/icons/AccountBox';
+import MenuOpenIcon from '@material-ui/icons/MenuOpen';
+
 import DeleteIcon from "@material-ui/icons/Delete";
 import IconButton from "@material-ui/core/IconButton";
 
@@ -20,11 +22,17 @@ import Button from "components/CustomButtons/Button.js";
 
 import styles from "assets/jss/nextjs-material-kit/components/headerLinksStyle.js";
 import SectionLogin from "pages-sections/Components-Sections/SectionLogin.js";
+import { UserForm } from 'pages/UserForm';
 
 const useStyles = makeStyles(styles);
 
 export default function HeaderLinks(props) {
+  const [open, setOpen] = React.useState(false);
   const classes = useStyles();
+  const handleClick=()=>{
+    console.log(open)
+    setOpen(true)
+  }
   const handelFunction=()=>{
     console.log("dfsfsd")
     return(
@@ -37,18 +45,18 @@ export default function HeaderLinks(props) {
         <CustomDropdown
           noLiPadding
           navDropdown
-          buttonText="Health and Yoga Plan"
+          buttonText="Health & Yoga Plan"
           buttonProps={{
             className: classes.navLink,
             color: "transparent"
           }}
-          buttonIcon={Apps}
+          buttonIcon={MenuOpenIcon}
           dropdownList={[
-            <Link href="/components">
-              <a className={classes.dropdownLink}>Self Health Evaluation</a>
-            </Link>,
+            <button  className={classes.dropdownLink2} onClick={handleClick}>
+            Self Health Assessment
+          </button> ,
             <a
-              href="https://creativetimofficial.github.io/nextjs-material-kit/#/documentation?ref=njsmk-navbar"
+             // href="https://creativetimofficial.github.io/nextjs-material-kit/#/documentation?ref=njsmk-navbar"
               target="_blank"
               className={classes.dropdownLink}
             >
@@ -56,10 +64,11 @@ export default function HeaderLinks(props) {
             </a>
           ]}
         />
+         {open?<UserForm setOpen={setOpen}></UserForm>:null}  
       </ListItem>
       <ListItem className={classes.listItem}>
         <Button
-          href="https://www.creative-tim.com/product/nextjs-material-kit-pro?ref=njsmk-navbar"
+       //   href="https://www.creative-tim.com/product/nextjs-material-kit-pro?ref=njsmk-navbar"
           color="transparent"
           target="_blank"
           className={classes.navLink}
@@ -74,7 +83,7 @@ export default function HeaderLinks(props) {
           target="_blank"
           className={classes.navLink}
         >
-          <CloudDownload className={classes.icons} /> Register Here
+          <AccountBoxIcon className={classes.icons} /> Register/Login
         </Button>
         </Link>
       </ListItem>
@@ -91,7 +100,7 @@ export default function HeaderLinks(props) {
           classes={{ tooltip: classes.tooltip }}
         >
           <Button
-            href="https://twitter.com/CreativeTim?ref=creativetim"
+        //    href="https://twitter.com/CreativeTim?ref=creativetim"
             target="_blank"
             color="transparent"
             className={classes.navLink}
@@ -109,7 +118,7 @@ export default function HeaderLinks(props) {
         >
           <Button
             color="transparent"
-            href="https://www.facebook.com/CreativeTim?ref=creativetim"
+         //   href="https://www.facebook.com/CreativeTim?ref=creativetim"
             target="_blank"
             className={classes.navLink}
           >
@@ -126,7 +135,7 @@ export default function HeaderLinks(props) {
         >
           <Button
             color="transparent"
-            href="https://www.instagram.com/CreativeTimOfficial?ref=creativetim"
+         //   href="https://www.instagram.com/CreativeTimOfficial?ref=creativetim"
             target="_blank"
             className={classes.navLink}
           >

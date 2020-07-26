@@ -20,7 +20,7 @@ export default function SectionDownload() {
           <GridItem xs={12} sm={12} md={8}>
             <h2>How it works?</h2>
             <h4>
-              We ask you take a small health assessment in which you can tell us the specific area of your health that needs to be improved . After that we gives you a personilized Yoga Plan and Ayruvedic Medicine that can take . You can even buy Raw herbs from us and make your own Medicine of couse we will provide the .
+            Here were asking you to take your self health assessment by which you can know the specific part of your body which needs to be worked upon.After that we can give you your personalized yoga plan for your body and Ayurvedic treatment wherever it is required/necessary. You can even buy raw herbs from us and make your own medicine whose procedure will be provided to you As per your required health-care needs .
             </h4>
           </GridItem>
           {/* <GridItem xs={12} sm={8} md={6}>

@@ -63,7 +63,7 @@ const headerStyle = {
     letterSpacing: "unset",
     "&:hover,&:focus": {
       color: "black",
-      background: "white"
+      background: "rgba(200, 200, 200, 0.2)"
     }
   },
   appResponsive: {

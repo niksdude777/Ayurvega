@@ -15,7 +15,6 @@ export default function products(){
         {id: "nextjs_crowntail", name: "Shankh Bhasma", price: 5.00, image: img2, description: "Shankha Bhasma brings relief to you from chronic indigestion problems. Contaminated food and drinks constantly harm and weaken your digestive system. Shankha Bhasma is a time-tested medication that soothes your stomach, heals the damages from contaminations and boosts your digestion. It has been clinically proven to have no side effects. "}, 
         {id: "nextjs_veiltail", name: "GILOY GHAN VATI 40 GM", price: 100.00, image: img3, description: "Patanjali Giloy Ghan Vati is used as a treatment for general fever and immunity.Useful in generalized debility, fever, skin & urinary disorders. Beneficial in general weakness, fever, Dengue, Chicken Guinea, skin and urinary disorders."} 
       ];
-      console.log("product ca;;")
       
           return(
             
@@ -40,11 +39,13 @@ export default function products(){
         <div className="product__price-button-container">
           <div className="product__price">Rs.{i.price.toFixed(2)}</div>
           <button 
-            className="snipcart-add-item product__button"
+            className=" product__button"
             data-item-id={i.id}
             data-item-name={i.name}
             data-item-price={i.price}
-            data-item-url={i.pathname}>
+            
+
+            >
           
             Add to cart
           </button>

@@ -37,13 +37,13 @@ export default function herbs(){
         <p className="product__description">{i.description}</p>
          <img src={i.image} alt="" className="product__image"/> 
         <div className="product__price-button-container">
-          <div className="product__price">${i.price.toFixed(2)}</div>
+          <div className="product__price">Rs.{i.price.toFixed(2)}</div>
           <button 
             className="snipcart-add-item product__button"
             data-item-id={i.id}
             data-item-name={i.name}
             data-item-price={i.price}
-            data-item-url={i.pathname}>
+              >
           
             Add to cart
           </button>

@@ -46,6 +46,7 @@ export default function LandingPage(props) {
   const classes = useStyles();
   const { ...rest } = props;
   const [isMobile, setMobile] = useState(null);
+  const [fixed, setFixed] = useState(true);
   const classes2 = useStyles2();
   const [value, setValue] = React.useState('1');
   const handleChange = (event, newValue) => {
@@ -56,20 +57,23 @@ export default function LandingPage(props) {
     setMobile(isMobile);
 }, []);
 
+const handleMenu=()=>{
+  setFixed(false);
+}
   return (
     <div>
       <Header
         color="transparent"
         brand="AyurveGa"
         rightLinks={<HeaderLinks />}
-        fixed
+        fixed={fixed}
         changeColorOnScroll={{
           height: 400,
           color: "black"
         }}
         {...rest}
       />
-      <Parallax responsive image={require("assets/img/solid.jpg")}>
+      <Parallax responsive image={isMobile?require("assets/img/solid_hori.jpg"):require("assets/img/solid.jpg")}>
         <div className={classes.container2}>
           <GridContainer>
             <GridItem xs={12} sm={12} md={6}>
@@ -84,7 +88,7 @@ export default function LandingPage(props) {
         </div>
       </Parallax>
       
-      <div className={classNames(classes.main, classes.mainRaised)}>
+      <div className={isMobile?classNames(classes.main, classes.mainRaised2):classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
         <div className={classes2.root}>
       <TabContext value={value}>
@@ -105,7 +109,7 @@ export default function LandingPage(props) {
         </AppBar>
         <TabPanel value="1">
 
-        <div className={classes.container2}>
+        <div className={classes.container3}>
           
               <h2>Way to live healthy life</h2>
               <h4>
@@ -181,9 +185,9 @@ export default function LandingPage(props) {
 
 
         </TabPanel>
-        <TabPanel value="2"><Products/></TabPanel>
-        <TabPanel value="3"><Herbs/></TabPanel>
-        <TabPanel value="4"><h1>Comming Soon....</h1></TabPanel>
+        <TabPanel value="2"><Products /></TabPanel>
+        <TabPanel value="3"><Herbs /></TabPanel>
+        <TabPanel value="4"><h1 className={classes.container3}>Comming Soon....</h1></TabPanel>
       </TabContext>
     </div> 
         

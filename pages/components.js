@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 // nodejs library that concatenates classes
 import classNames from "classnames";
 // react components for routing our app without refresh
@@ -34,6 +34,7 @@ import styles from "assets/jss/nextjs-material-kit/pages/components.js";
 const useStyles = makeStyles(styles);
 
 export default function Components(props) {
+  const [isMobile, setMobile] = useState(null);
   const [open, setOpen] = React.useState(false);
   const classes = useStyles();
   const { ...rest } = props;
@@ -41,6 +42,11 @@ export default function Components(props) {
     console.log(open)
     setOpen(true)
   }
+
+  useEffect(() => {
+    const isMobile = document.documentElement.clientWidth < 768;
+    setMobile(isMobile);
+}, []);
   return (
     <div>
       <Header
@@ -54,7 +60,7 @@ export default function Components(props) {
         }}
         {...rest}
       />
-      <Parallax image={require("assets/img/solid.jpg")}>
+      <Parallax image={isMobile?require("assets/img/solid_hori.jpg"):require("assets/img/solid.jpg")}>
        
         <div className={classes.container2}>
           <GridContainer>
@@ -66,7 +72,7 @@ export default function Components(props) {
               </div>
             </GridItem>
           </GridContainer>
-          <Button onClick={handleClick}>
+          <Button className={classes.brand} onClick={handleClick}>
                   Self Health Assessment
                 </Button>
           {open?<UserForm setOpen={setOpen}></UserForm>:null}   
